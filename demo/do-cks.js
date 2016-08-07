@@ -11,6 +11,10 @@
 					return (data.meta && data.meta.hasOwnProperty('properties') && data.meta.properties && data.meta.properties.hasOwnProperty('scope') && data.meta.properties.scope);
 				}
 
+				if(attrs.readme){
+					scope.readme = true;
+				}
+
 				scope.module = attrs.module;
 				scope.description = ctlr.documentation.description;
 				scope.directives = [];

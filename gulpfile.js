@@ -193,11 +193,22 @@ gulp.task('bower', function() {
  */
 
 gulp.task('browser-sync', function() {
+	var url = require("url");
+	var defaultFile = "index.html"
+
 	browserSync.init({
 		server: {
-			baseDir: "./"
-		},
-		https: true
+			baseDir: "./",
+			middleware: function(req, res, next) {
+                var fileName = url.parse(req.url);
+                fileName = fileName.href.split(fileName.search).join("");
+                var fileExists = fs.existsSync(__dirname + fileName);
+                if (!fileExists && fileName.indexOf("browser-sync-client") < 0) {
+                    req.url = "/" + defaultFile;
+                }
+                return next();
+            }
+		}
 	});
 });
 

@@ -1,5 +1,6 @@
 <div ng-controller="AppCtlr as app" class="docks-transition" ng-class="sidebarActive ? 'sidebar-darken' : ''">
-	<div ng-class="sidebarActive ? 'sidebar-blur' : ''" class="docks-transition">
+
+	<div ng-class="sidebarActive ? 'sidebar-blur' : ''" class="docks-transition" ng-if="!readme">
 		<div class="heading">
 			<div class="section">
 				<h1 ng-bind="module.toUpperCase()"></h1>
@@ -98,7 +99,7 @@
 		</div>
 	</div>
 
-	<div id="sidebar" ng-click="sidebarActive = sidebarActive ? 0 : 1" ng-class="sidebarActive ? 'active' : ''">
+	<div ng-if="!readme" id="sidebar" ng-click="sidebarActive = sidebarActive ? 0 : 1" ng-class="sidebarActive ? 'active' : ''">
 		<div style="text-align: center; padding: 0px 7px 7px; margin-top: -5px;"><i style="font-size: 18px;" class="fa" ng-class="sidebarActive ? 'fa-angle-double-down' : 'fa-angle-double-up'"></i></div>
 		<div ng-if="directives.length" style="margin-bottom: 21px;">
 			<h5 class="directives">Directives</h5>
@@ -107,6 +108,108 @@
 		<div ng-if="services.length" style="margin-bottom: 21px;">
 			<h5 class="services">Services</h5>
 			<a ng-repeat="service in services track by $index" href="#{{service.name}}" ng-click="ctlr.anchorScroll()" ng-bind="service.name"></a>
+		</div>
+	</div>
+
+	<div ng-if="readme" id="readme">
+		<p ng-bind="'# ' + module"></p>
+		<p>&nbsp;</p>
+		<p ng-if="description" ng-bind="description"></p>
+		<p>&nbsp;</p>
+		<p>## Install</p>
+		<p>&nbsp;</p>
+		<p>* * *</p>
+		<p>&nbsp;</p>
+		<p>`bower install {{module}}`</p>
+		<p>**Add to your app**</p>
+		<p>&nbsp;</p>
+		<p>`angular.module('app’, ['{{module}}])`</p>
+		<p>&nbsp;</p>
+		<p>[Live demo](http://{{module}}/cklsylabs.com/)</p>
+		<p>&nbsp;</p>
+		<div ng-if="directives.length">
+			<p>&nbsp;</p>
+			<p># Directives</p>
+			<p>&nbsp;</p>
+			<p>* * *</p>
+			<p>&nbsp;</p>
+
+			<div ng-repeat="directive in directives track by $index">
+				<p>## {{directive.name}}</p>
+				<p>&nbsp;</p>
+				<div ng-if="directive.meta.description">
+					<p ng-bind="directive.meta.description"></p>
+					<p>&nbsp;</p>
+				</div>
+				<div ng-if="directive.meta.markup">
+					<p>**MARKUP**</p>
+					<p>&nbsp;</p>
+					<p>```html</p>
+					<p ng-bind="directive.meta.markup"></p>
+					<p>  ```</p>
+					<p>&nbsp;</p>
+				</div>
+				<div ng-repeat="(p, property) in directive.meta.properties track by p">
+					<p>**{{p.toUpperCase()}}**</p>
+					<p>&nbsp;</p>
+					<div ng-repeat="(key, option) in property track by $index">
+						<p>`{{key}}` <span ng-if="option.type">- *{{option.type}}* -</span> <span ng-bind="option.description"></span></p>
+						<p>&nbsp;</p>
+					</div>
+					<p>&nbsp;</p>
+				</div>
+				<p>&nbsp;</p>
+				<p>* * *</p>
+				<p>&nbsp;</p>
+			</div>
+			<p>&nbsp;</p>
+		</div>
+
+		<div ng-if="directives.length">
+			<p>&nbsp;</p>
+			<p># Services</p>
+			<p>&nbsp;</p>
+			<p>* * *</p>
+			<p>&nbsp;</p>
+
+			<div ng-repeat="service in services track by $index">
+				<p>## {{service.name}}</p>
+				<p>&nbsp;</p>
+				<div ng-if="service.meta.description">
+					<p ng-bind="service.meta.description"></p>
+					<p>&nbsp;</p>
+				</div>
+
+				<div ng-repeat="(p, property) in service.meta.properties track by p">
+					<p>#### {{p}}p>
+					<p>&nbsp;</p>
+					<div ng-repeat="(key, option) in property track by $index" ng-if="key !== 'description'">
+						<div ng-if="key === 'returns'">
+							<p>**{{key}}** <span ng-if="option.type">- *{{option.type}}*</span></p>
+							<p>```javascript</p>
+							<p><span ng-bind-html="option.description"></span></p>
+							<p>  ```</p>
+							<p>&nbsp;</p>
+						</div>
+
+						<div ng-if="key !== 'returns'">
+							<p>**{{key}}**</p>
+							<p>&nbsp;</p>
+							<div ng-repeat="(a, argument) in option track by $index">
+								<p>`{{a}}` <span ng-if="argument.type">- *{{argument.type}}*</span> </p>
+								<p>```html</p>
+								<p><span ng-bind-html="argument.description"></span></p>
+								<p>  ```</p>
+								<p>&nbsp;</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<p>&nbsp;</p>
+				<p>* * *</p>
+				<p>&nbsp;</p>
+			</div>
 		</div>
 	</div>
 </div>

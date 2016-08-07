@@ -348,3 +348,7 @@ textarea:hover{
 	background-color: #a10005 !important;
 	color: #fff !important;
 }
+
+#readme p{
+	margin: 0px;
+}
