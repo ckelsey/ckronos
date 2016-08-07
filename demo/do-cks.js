@@ -165,8 +165,6 @@
 						scope.services.push(data);
 					}
 				});
-
-				console.log(scope.directives);
 			}
 		}
 	});
