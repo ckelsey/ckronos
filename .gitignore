@@ -1,4 +1,6 @@
+.awspublish-ckronos
 aws-config.json
+build/
 npm-debug.log
 .sass-cache/
 node_modules/
