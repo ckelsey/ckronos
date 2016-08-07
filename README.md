@@ -148,7 +148,7 @@ An element with a date ng-model that when clicked, opens a ckronos-date overlay
 
 `ng-model` - *date* - A date string to bind to
 
-`date-html` - *object* - An object that contains html strings that can be inserted into a day. Structure goes year->month-day
+`date-html` - *object* - An object that contains html strings that can be inserted into a day. Structure goes year -> month -> day
 
 `show-time` - *boolean* - Determines if time settings are to be displayed
 
