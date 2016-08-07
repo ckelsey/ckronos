@@ -1,0 +1,8 @@
+<div class="leftside">
+	<span class="month-label" ng-bind="dateObject.data[dateObject.month].shortname"></span>&nbsp;<span class="month-label" ng-bind="dateObject.year"></span>
+</div>
+<div class="rightside">
+	<button ng-if="setMonth" ng-click="setMonth(-1)"><i class="fa fa-chevron-left"></i></button>
+	<button ng-if="setToday" ng-click="setToday()" class="today">&middot;</button>
+	<button ng-if="setMonth" ng-click="setMonth(1)"><i class="fa fa-chevron-right"></i></button>
+</div>

@@ -1,0 +1,21 @@
+<table class="ckronos_calendar" ng-class="update ? 'clickable' : ''">
+	<thead>
+		<tr>
+			<th>S</th>
+			<th>M</th>
+			<th>T</th>
+			<th>W</th>
+			<th>T</th>
+			<th>F</th>
+			<th>S</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="row in ctlr.calendar.rows">
+			<td ng-repeat="cell in row" ng-class="cell.differentMonth ? 'diff_month' : cell.active ? 'active' : ''" ng-click="update($event)" day="{{cell.day}}" month="{{cell.month}}" year="{{cell.year}}">
+				<div class="ckronos_calendar_day_number" ng-bind="cell.day"></div>
+				<div ng-if="cell.html" ng-bind-html="cell.html"></div>
+			</td>
+		</tr>
+	</tbody>
+</table>

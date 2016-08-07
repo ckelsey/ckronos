@@ -1,0 +1,57 @@
+<div class="ckronos_clock" ng-class="showSecondsDisplay ? 'seconds' : ''">
+	<div ng-if="!showAnalog" class="ckronos_clock_type_digital">
+		<div class="ckronos_clock_input">
+			<input type="text" ng-model="dateObject.time.hour" ckronos-leading-zero ng-change="validate('hour', dateObject.time.hour)" />
+		</div>
+
+		<div class="ckronos_clock_text">:</div>
+
+		<div class="ckronos_clock_input">
+			<input type="text" ng-model="dateObject.time.minute" ckronos-leading-zero ng-change="validate('minute', dateObject.time.minute)" />
+		</div>
+
+		<div ng-if="showSecondsDisplay" class="ckronos_clock_text">:</div>
+
+		<div ng-if="showSecondsDisplay" class="ckronos_clock_input">
+			<input type="text" ng-model="dateObject.time.second" ckronos-leading-zero ng-change="validate('second', dateObject.time.second)" />
+		</div>
+
+		<div class="ckronos_clock_text">&nbsp;</div>
+
+		<div class="ckronos_clock_input ampm">
+			<select ng-model="dateObject.time.ampm" ng-change="validate('ampm', dateObject.time.ampm)">
+				<option value="am">AM</option>
+				<option value="pm">PM</option>
+			</select>
+		</div>
+	</div>
+
+	<div ng-if="showAnalog" class="ckronos_clock_type_analog">
+		<div class="ckronos_clock_type_analog-inner" ng-class="continuous === 0 || continuous === '0' || continuous === undefined ? 'draggable' : ''" ng-mousedown="analogDragStart($event)">
+
+			<div class="ckronos_clock_ticks_wrapper">
+				<div class="ckronos_clock_tick" ng-repeat="i in getTicks() track by $index">
+					<div class="ckronos_clock_tick-inner"></div>
+				</div>
+			</div>
+
+			<div class="ckronos_clock_hand hour" ng-style="{'transform': 'rotate('+ hourDegrees +'deg)'}">
+				<div class="ckronos_clock_hand-inner">
+					<div class="ckronos_clock_hand-inner2"></div>
+				</div>
+			</div>
+			<div class="ckronos_clock_hand minute" ng-style="{'transform': 'rotate('+ minuteDegrees +'deg)'}">
+				<div class="ckronos_clock_hand-inner">
+					<div class="ckronos_clock_hand-inner2"></div>
+				</div>
+			</div>
+			<div ng-if="showSecondsDisplay" class="ckronos_clock_hand second" ng-style="{'transform': 'rotate('+ secondDegrees +'deg)'}">
+				<div class="ckronos_clock_hand-inner">
+					<div class="ckronos_clock_hand-inner2"></div>
+				</div>
+			</div>
+
+			<div class="ckronos_clock_type_analog-dot"></div>
+		</div>
+	</div>
+</div>
