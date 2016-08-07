@@ -12,7 +12,7 @@ Angular date/time picker and helpers
 
 `angular.module('app’, ['ckronos])`
 
-[Live demo](http://ckronos/cklsylabs.com/)
+[Live demo](http://ckronos.cklsylabs.com/)
 
 
 # Directives
@@ -437,4 +437,3 @@ If the date is valid or not
 
 
 * * *
- 
