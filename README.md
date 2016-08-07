@@ -218,35 +218,35 @@ An element with a date ng-model that when clicked, opens a ckronos-clock overlay
 
 Service with helper methods related to dates and time
 
-#### daysInMonth
+### daysInMonth
 
 **arguments**
 
-`month` - *number*
+ * `month` - *number*
 ```html
 0 based index of the month
 ```
 
-`year` - *number*
+ * `year` - *number*
 ```html
 year
 ```
 
-**returns** - *number*
+***returns - number***
 ```javascript
 How many days
 ```
 
-#### displayDate
+### displayDate
 
 **arguments**
 
-`date` - *date*
+ * `date` - *date*
 ```html
 A date object. Defaults to the current date
 ```
 
-`format` - *string*
+ * `format` - *string*
 ```html
 How to format the date.
 $month$ full month name
@@ -261,21 +261,21 @@ $yyyy$ full year
 $yy$ last 2 digits of the year
 ```
 
-**returns** - *string*
+***returns - string***
 ```javascript
 Formatted string
 ```
 
-#### displayTime
+### displayTime
 
 **arguments**
 
-`date` - *date*
+ * `date` - *date*
 ```html
 A date object. Defaults to the current date
 ```
 
-`format` - *string*
+ * `format` - *string*
 ```html
 How to format the date.
 $HH$ military hour with leading zeros
@@ -290,21 +290,21 @@ $AMPM$ capitalized period of day
 $ampm$ period of day
 ```
 
-**returns** - *string*
+***returns - string***
 ```javascript
 Formatted string
 ```
 
-#### monthsInYear
+### monthsInYear
 
 **arguments**
 
-`year` - *number*
+ * `year` - *number*
 ```html
 the year to calculate
 ```
 
-**returns** - *array*
+***returns - array***
 ```javascript
 array object for every month in the given year
 [
@@ -318,16 +318,16 @@ array object for every month in the given year
 
 ```
 
-#### parseDate
+### parseDate
 
 **arguments**
 
-`date` - *date*
+ * `date` - *date*
 ```html
 A date object. Defaults to the current date
 ```
 
-**returns** - *object*
+***returns - object***
 ```javascript
 {
   "date": "date",
@@ -353,16 +353,16 @@ A date object. Defaults to the current date
 
 ```
 
-#### parseTime
+### parseTime
 
 **arguments**
 
-`date` - *date*
+ * `date` - *date*
 ```html
 A date object. Defaults to the current date
 ```
 
-**returns** - *object*
+***returns - object***
 ```javascript
 {
   "hour": "number",
@@ -374,66 +374,67 @@ A date object. Defaults to the current date
 
 ```
 
-#### resetDate
+### resetDate
 
 **arguments**
 
-`obj` - *object*
+ * `obj` - *object*
 ```html
 The object to update, must be an object that was created from CKronos.parseDate()
 ```
 
-**returns** - *date*
+***returns - date***
 ```javascript
 A new date
 ```
 
-#### setEventData
+### setEventData
 
 **arguments**
 
-`event` - *event data*
+ * `event` - *event data*
 ```html
 The event data, but must have the currentTarget property
 ```
 
-`obj` - *object*
+ * `obj` - *object*
 ```html
 The object to update, must be an object that was created from CKronos.parseDate()
 ```
 
-**returns** - *object*
+***returns - object***
 ```javascript
 see CKronos.parseDate()
 ```
 
-#### update
+### update
 
 **arguments**
 
-`obj` - *object*
+ * `obj` - *object*
 ```html
 The object to update, must be an object that was created from CKronos.parseDate()
 ```
 
-**returns** - *object*
+***returns - object***
 ```javascript
 see CKronos.parseDate()
 ```
 
-#### validDate
+### validDate
 
 **arguments**
 
-`date` - *date*
+ * `date` - *date*
 ```html
 A date object. Defaults to the current date
 ```
 
-**returns** - *boolean*
+***returns - boolean***
 ```javascript
 If the date is valid or not
 ```
 
 
 * * *
+ 
