@@ -168,7 +168,7 @@
 						},
 						"date-html": {
 							type: 'object',
-							description: "An object that contains html strings that can be inserted into a day. Structure goes year->month-day",
+							description: "An object that contains html strings that can be inserted into a day. Structure goes year -> month -> day",
 							value: this.calendarDemoHtml
 						}
 					}

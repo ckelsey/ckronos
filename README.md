@@ -7,6 +7,7 @@ Angular date/time picker and helpers
 * * *
 
 `bower install ckronos`
+
 **Add to your app**
 
 `angular.module('app’, ['ckronos])`
@@ -76,7 +77,7 @@ Renders a calendar for the given date
 
 `update` - *function* - A function to be called when a day is clicked on the calendar. This also is what determines the calender's CSS hover effects
 
-`date-html` - *object* - An object that contains html strings that can be inserted into a day. Structure goes year->month-day
+`date-html` - *object* - An object that contains html strings that can be inserted into a day. Structure goes year -> month -> day
 
 
 
@@ -217,7 +218,7 @@ An element with a date ng-model that when clicked, opens a ckronos-clock overlay
 
 Service with helper methods related to dates and time
 
-#### daysInMonthp>
+#### daysInMonth
 
 **arguments**
 
@@ -236,7 +237,7 @@ year
 How many days
 ```
 
-#### displayDatep>
+#### displayDate
 
 **arguments**
 
@@ -265,7 +266,7 @@ $yy$ last 2 digits of the year
 Formatted string
 ```
 
-#### displayTimep>
+#### displayTime
 
 **arguments**
 
@@ -294,7 +295,7 @@ $ampm$ period of day
 Formatted string
 ```
 
-#### monthsInYearp>
+#### monthsInYear
 
 **arguments**
 
@@ -317,7 +318,7 @@ array object for every month in the given year
 
 ```
 
-#### parseDatep>
+#### parseDate
 
 **arguments**
 
@@ -352,7 +353,7 @@ A date object. Defaults to the current date
 
 ```
 
-#### parseTimep>
+#### parseTime
 
 **arguments**
 
@@ -373,7 +374,7 @@ A date object. Defaults to the current date
 
 ```
 
-#### resetDatep>
+#### resetDate
 
 **arguments**
 
@@ -387,7 +388,7 @@ The object to update, must be an object that was created from CKronos.parseDate(
 A new date
 ```
 
-#### setEventDatap>
+#### setEventData
 
 **arguments**
 
@@ -406,7 +407,7 @@ The object to update, must be an object that was created from CKronos.parseDate(
 see CKronos.parseDate()
 ```
 
-#### updatep>
+#### update
 
 **arguments**
 
@@ -420,7 +421,7 @@ The object to update, must be an object that was created from CKronos.parseDate(
 see CKronos.parseDate()
 ```
 
-#### validDatep>
+#### validDate
 
 **arguments**
 

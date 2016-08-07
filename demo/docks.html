@@ -121,6 +121,7 @@
 		<p>* * *</p>
 		<p>&nbsp;</p>
 		<p>`bower install {{module}}`</p>
+		<p>&nbsp;</p>
 		<p>**Add to your app**</p>
 		<p>&nbsp;</p>
 		<p>`angular.module('app’, ['{{module}}])`</p>
@@ -181,7 +182,7 @@
 				</div>
 
 				<div ng-repeat="(p, property) in service.meta.properties track by p">
-					<p>#### {{p}}p>
+					<p>#### {{p}}</p>
 					<p>&nbsp;</p>
 					<div ng-repeat="(key, option) in property track by $index" ng-if="key !== 'description'">
 						<div ng-if="key === 'returns'">
