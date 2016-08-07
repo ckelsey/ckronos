@@ -4,8 +4,3 @@ npm-debug.log
 node_modules/
 bower_components/
 .DS_Store
-404.html
-bower.json
-dist/
-index.html
-starter.loc.conf

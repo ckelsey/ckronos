@@ -1,0 +1,515 @@
+body.ckronos-blur > * {
+  filter: blur(5px);
+}
+body.ckronos-blur > *.ckronos-date-time-wrapper {
+  filter: blur(0px);
+}
+
+.ckronos-date-time-wrapper {
+  font-family: sans-serif;
+  position: fixed;
+  width: 0%;
+  height: 0%;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  color: transparent;
+  background: transparent;
+  box-sizing: border-box;
+  padding: 0px;
+  overflow: hidden;
+}
+.ckronos-date-time-wrapper.active {
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  color: #303030;
+  background: rgba(243, 243, 243, 0.93);
+  overflow: auto;
+  padding: 35px 7%;
+}
+
+ckronos-calendar-navigation {
+  font-family: sans-serif;
+  width: 100%;
+  display: table;
+  margin: 0px auto;
+  color: #303030;
+  vertical-align: middle;
+  margin-bottom: 7px;
+}
+ckronos-calendar-navigation .leftside {
+  display: table-cell;
+  vertical-align: middle;
+}
+ckronos-calendar-navigation .leftside span {
+  font-size: 21px;
+  line-height: 35px;
+}
+ckronos-calendar-navigation .leftside span:nth-child(odd) {
+  font-weight: bold;
+}
+ckronos-calendar-navigation .leftside span:nth-child(even) {
+  font-weight: 100;
+}
+ckronos-calendar-navigation .rightside {
+  display: table-cell;
+  text-align: right;
+  vertical-align: middle;
+}
+ckronos-calendar-navigation .rightside button {
+  display: inline-block;
+  background: #FFFFFF;
+  border: none;
+  vertical-align: middle;
+  padding: 8px 10px 6px;
+  line-height: 18px;
+  margin: 1px;
+  border-radius: 1px;
+  box-shadow: 0px 1px 1px #e7e7e7;
+  font-size: 12px;
+  font-weight: bold;
+  color: #303030;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  outline: none !important;
+  appearance: none;
+  width: auto;
+  height: auto;
+  transition: transform .2s;
+  transform: scale(1) translate3d(0, 0, 0);
+}
+ckronos-calendar-navigation .rightside button.today {
+  font-size: 28px;
+  padding: 6px 10px 8px;
+}
+ckronos-calendar-navigation .rightside button:hover {
+  transform: scale(1.1) translate3d(0, 0, 0);
+}
+
+ckronos-calendar {
+  font-family: sans-serif;
+  width: 100%;
+  display: block;
+  margin: 0px auto;
+}
+ckronos-calendar table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+ckronos-calendar table th {
+  text-align: center;
+  background: transparent;
+  padding: 10px;
+}
+ckronos-calendar table td {
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  padding: 5px;
+  height: 28px;
+  background: #FFFFFF;
+  box-shadow: inset 0px 0px 1px 0px #e7e7e7;
+  transform: scale(1) translate3d(0, 0, 0);
+  z-index: 1;
+  font-size: 12px;
+  transition: background .2s, color .2s, transform .2s, box-shadow .2s, opacity .2s;
+}
+ckronos-calendar table td.diff_month {
+  opacity: .382;
+}
+ckronos-calendar table td.active {
+  background: #6DBDD6;
+  color: #FFFFFF;
+  box-shadow: inset 0px 0px 1px 0px #1c5364;
+}
+ckronos-calendar table.clickable td {
+  cursor: pointer;
+}
+ckronos-calendar table.clickable td:hover {
+  background: #6DBDD6;
+  color: #FFFFFF;
+  transform: scale(1.1) translate3d(0, 0, 0);
+  z-index: 2;
+  box-shadow: inset 0px 0px 1px 0px #1c5364, 0px 2px 6px 0px rgba(0, 0, 0, 0.191);
+}
+ckronos-calendar table.clickable td.diff_month {
+  opacity: .382;
+}
+ckronos-calendar table.clickable td.diff_month:hover {
+  opacity: 1;
+}
+
+.ckronos_calendar_day_number {
+  margin-bottom: 7px;
+}
+
+.ckronos-date-time-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+.ckronos-date-time-inner .ckronos_clock {
+  max-width: 300px;
+  margin: 0px auto;
+}
+
+.ckronos_clock_type_digital {
+  display: table;
+  width: 100%;
+  margin: 0px auto;
+  table-layout: fixed;
+}
+.ckronos_clock_type_digital .ckronos_clock_text {
+  display: table-cell;
+  width: 7px;
+  text-align: center;
+  vertical-align: middle;
+}
+.ckronos_clock_type_digital .ckronos_clock_input {
+  display: table-cell;
+  vertical-align: middle;
+}
+.ckronos_clock_type_digital .ckronos_clock_input.ampm {
+  width: 50px;
+}
+.ckronos_clock_type_digital .ckronos_clock_input input, .ckronos_clock_type_digital .ckronos_clock_input select {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  outline: none !important;
+  appearance: none;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  padding: 5px 0px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0px 0px 1px 0px #b6b6b6;
+  transform: scale(1) translate3d(0, 0, 0);
+  z-index: 1;
+  font-size: 16px;
+  transition: background .2s, transform .2s;
+}
+.ckronos_clock_type_digital .ckronos_clock_input input:hover, .ckronos_clock_type_digital .ckronos_clock_input input:focus, .ckronos_clock_type_digital .ckronos_clock_input select:hover, .ckronos_clock_type_digital .ckronos_clock_input select:focus {
+  background: #FFFFFF;
+  transform: scale(1.1) translate3d(0, 0, 0);
+}
+.ckronos_clock_type_digital .ckronos_clock_input select {
+  padding: 5px;
+}
+
+.ckronos_clock_type_analog {
+  width: 100%;
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden;
+}
+.ckronos_clock_type_analog .ckronos_clock_type_analog-inner {
+  padding: 50% 0px;
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 3px #000;
+}
+.ckronos_clock_type_analog .ckronos_clock_type_analog-inner.draggable {
+  cursor: grab;
+}
+.ckronos_clock_type_analog .ckronos_clock_type_analog-inner:active {
+  cursor: grabbing;
+}
+.ckronos_clock_type_analog .ckronos_clock_type_analog-dot {
+  position: absolute;
+  width: 6%;
+  padding: 3% 0px;
+  background: #000;
+  border-radius: 50%;
+  left: 47%;
+  top: 47%;
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick .ckronos_clock_tick-inner {
+  position: relative;
+  width: 1%;
+  height: 1%;
+  top: 5px;
+  left: 49.5%;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(5n+0) .ckronos_clock_tick-inner {
+  width: 2%;
+  height: 4%;
+  left: 49%;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20% 20% 50% 50%;
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(15n+0) .ckronos_clock_tick-inner {
+  height: 6%;
+  background: black;
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(1) {
+  transform: rotate(6deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(2) {
+  transform: rotate(12deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(3) {
+  transform: rotate(18deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(4) {
+  transform: rotate(24deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(5) {
+  transform: rotate(30deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(6) {
+  transform: rotate(36deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(7) {
+  transform: rotate(42deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(8) {
+  transform: rotate(48deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(9) {
+  transform: rotate(54deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(10) {
+  transform: rotate(60deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(11) {
+  transform: rotate(66deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(12) {
+  transform: rotate(72deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(13) {
+  transform: rotate(78deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(14) {
+  transform: rotate(84deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(15) {
+  transform: rotate(90deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(16) {
+  transform: rotate(96deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(17) {
+  transform: rotate(102deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(18) {
+  transform: rotate(108deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(19) {
+  transform: rotate(114deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(20) {
+  transform: rotate(120deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(21) {
+  transform: rotate(126deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(22) {
+  transform: rotate(132deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(23) {
+  transform: rotate(138deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(24) {
+  transform: rotate(144deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(25) {
+  transform: rotate(150deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(26) {
+  transform: rotate(156deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(27) {
+  transform: rotate(162deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(28) {
+  transform: rotate(168deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(29) {
+  transform: rotate(174deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(30) {
+  transform: rotate(180deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(31) {
+  transform: rotate(186deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(32) {
+  transform: rotate(192deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(33) {
+  transform: rotate(198deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(34) {
+  transform: rotate(204deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(35) {
+  transform: rotate(210deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(36) {
+  transform: rotate(216deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(37) {
+  transform: rotate(222deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(38) {
+  transform: rotate(228deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(39) {
+  transform: rotate(234deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(40) {
+  transform: rotate(240deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(41) {
+  transform: rotate(246deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(42) {
+  transform: rotate(252deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(43) {
+  transform: rotate(258deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(44) {
+  transform: rotate(264deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(45) {
+  transform: rotate(270deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(46) {
+  transform: rotate(276deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(47) {
+  transform: rotate(282deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(48) {
+  transform: rotate(288deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(49) {
+  transform: rotate(294deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(50) {
+  transform: rotate(300deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(51) {
+  transform: rotate(306deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(52) {
+  transform: rotate(312deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(53) {
+  transform: rotate(318deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(54) {
+  transform: rotate(324deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(55) {
+  transform: rotate(330deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(56) {
+  transform: rotate(336deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(57) {
+  transform: rotate(342deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(58) {
+  transform: rotate(348deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(59) {
+  transform: rotate(354deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_ticks_wrapper .ckronos_clock_tick:nth-child(60) {
+  transform: rotate(360deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_hand {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform-origin: 100% 100%;
+}
+.ckronos_clock_type_analog .ckronos_clock_hand .ckronos_clock_hand-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  left: .5%;
+  transform: rotate(-1deg);
+  transform-origin: 100% 0%;
+}
+.ckronos_clock_type_analog .ckronos_clock_hand .ckronos_clock_hand-inner .ckronos_clock_hand-inner2 {
+  width: 6%;
+  height: 90%;
+  background: #404040;
+  position: absolute;
+  right: -3%;
+  bottom: 0;
+  transform: rotate(2deg);
+}
+.ckronos_clock_type_analog .ckronos_clock_hand.hour .ckronos_clock_hand-inner .ckronos_clock_hand-inner2 {
+  width: 6%;
+  height: 60%;
+  right: -3%;
+  background: #000;
+}
+.ckronos_clock_type_analog .ckronos_clock_hand.second .ckronos_clock_hand-inner {
+  left: 0%;
+}
+.ckronos_clock_type_analog .ckronos_clock_hand.second .ckronos_clock_hand-inner .ckronos_clock_hand-inner2 {
+  width: 2%;
+  background: #a10005;
+  right: -1%;
+}
+
+.ckronos_buttons {
+  text-align: center;
+  margin-top: 14px;
+}
+.ckronos_buttons button {
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 50%;
+  padding: 0px;
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  display: inline-block;
+  outline: none !important;
+  transition: transform .2s;
+  transform: scale(1) translate3d(0, 0, 0);
+}
+.ckronos_buttons button:hover {
+  transform: scale(1.1) translate3d(0, 0, 0);
+}
+
+.ckronos-date-time_time_wrapper {
+  width: 100%;
+  max-width: 210px;
+  margin: 35px auto;
+}
