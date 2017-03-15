@@ -331,7 +331,7 @@ gulp.task('move_to_lib', function(done) {
 
 
 var moveSourceMaps = [
-	'bower_components/ckc-angularjs-utility/dist/utility.min.js.map'
+	'bower_components/angular/angular.min.js.map'
 ];
 
 
@@ -420,13 +420,13 @@ gulp.task('live', function() {
 	gulp.watch(app_scripts, ['app_scripts']);
 	gulp.watch(htmlToDo, ['app_scripts']);
 	// gulp.watch(moveToLib, ['move_to_lib']);
-	// gulp.watch(moveSourceMaps, ['move_source_maps']);
+	gulp.watch(moveSourceMaps, ['move_source_maps']);
 	gulp.watch("dist/**").on('change', browserSync.reload);
 });
 
 gulp.task('default', [
 	// 'move_to_lib',
-	// 'move_source_maps',
+	'move_source_maps',
 	'move_fonts',
 	'styles',
 	'styles_vendor',
